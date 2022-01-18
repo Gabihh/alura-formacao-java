@@ -1,0 +1,51 @@
+package br.com.alura;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+
+public class TestaPerformance {
+
+    public static void main(String[] args) {
+
+        Collection<Integer> numerosArray = new ArrayList<Integer>();
+
+        long inicio = System.currentTimeMillis();
+
+        for (int i = 1; i <= 50000; i++) {
+            numerosArray.add(i);
+        }
+
+        for (Integer numero : numerosArray) {
+            numerosArray.contains(numero);
+        }
+
+        long fimArray = System.currentTimeMillis();
+
+        long tempoDeExecucaoArray = fimArray - inicioArray;
+
+        System.out.println("Tempo gasto: " + tempoDeExecucaoArray);
+        
+        System.out.println("-------------------------------");
+        
+        Collection<Integer> numerosHash = new HashSet<Integer>();
+
+        long inicioHash = System.currentTimeMillis();
+
+        for (int i = 1; i <= 50000; i++) {
+        	numerosHash.add(i);
+        }
+
+        for (Integer numero : numerosHash) {
+        	numerosHash.contains(numero);
+        }
+
+        long fimHash = System.currentTimeMillis();
+
+        long tempoDeExecucaoHash = fimHash - inicioHash;
+
+        System.out.println("Tempo gasto: " + tempoDeExecucaoHash);
+
+    }
+
+}

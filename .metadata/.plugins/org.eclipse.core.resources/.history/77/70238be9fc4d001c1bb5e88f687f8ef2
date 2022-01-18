@@ -1,0 +1,25 @@
+package br.com.alura;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Curso {
+	private String curso;
+	private String instrutor;
+	private List<Aula> aulas = new LinkedList()<Aula>;
+	
+	
+	
+	public String getNome() {
+		return this.getNome();
+	}
+	
+	public String getInstrutor() {
+		return this.instrutor;
+	}
+	
+	public List<Aula> getAula() {
+		return this.aulas;
+	}
+}

@@ -1,0 +1,53 @@
+package br.com.alura;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+
+public class TestaPerformance {
+
+    public static void main(String[] args) {
+
+        Collection<Integer> numerosArray = new ArrayList<Integer>();
+
+        long inicioArray = System.currentTimeMillis();
+
+        for (int i = 1; i <= 50000; i++) {
+            numerosArray.add(i);
+        }
+
+        for (Integer numero : numerosArray) {
+            numerosArray.contains(numero);
+        }
+
+        long fimArray = System.currentTimeMillis();
+
+        long tempoDeExecucaoArray = fimArray - inicioArray;
+
+        System.out.println("Tempo gasto (ArrayList): " + tempoDeExecucaoArray);
+        
+        System.out.println("-------------------------------");
+        
+        Collection<Integer> numerosHash = new HashSet<Integer>();
+
+        long inicioHashAdd  = System.currentTimeMillis();
+
+        for (int i = 1; i <= 50000; i++) {
+        	numerosHash.add(i);
+        }
+        long fimHashAdd = System.currentTimeMillis();
+        long tempoDeExecucaoHashAdd = fimHashAdd  - inicioHashAdd ;
+        System.out.println("Tempo gasto (HashSet): " + tempoDeExecucaoHashAdd);
+        
+        long inicioHashBusca  = System.currentTimeMillis();
+
+        for (Integer numero : numerosHash) {
+        	numerosHash.contains(numero);
+        }
+        long fimHashBusca = System.currentTimeMillis();
+        long tempoDeExecucaoHashBusca = fimHashBusca  - inicioHashBusca ;
+        System.out.println("Tempo gasto (HashSet): " + tempoDeExecucaoHashBusca);
+
+    }
+
+}

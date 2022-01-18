@@ -1,0 +1,12 @@
+package br.com.alura;
+
+import java.util.TreeSet;
+
+public class TesteReciboTreeSet {
+	Recibo rec1 = new Recibo();
+	Recibo rec2 = new Recibo();
+	Recibo rec3 = new Recibo();
+	
+	TreeSet<Recibo> recibos = new TreeSet<>();
+	recibo
+}

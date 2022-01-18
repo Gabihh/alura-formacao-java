@@ -1,0 +1,27 @@
+package br.com.alura.java.io.teste;
+
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+
+public class TesteEscrita2 {
+
+	public static void main(String[] args) throws IOException {
+//		OutputStream fos = new FileOutputStream("arquivo-teste2.txt");
+//		Writer osw = new OutputStreamWriter(fos);
+//		BufferedWriter bw = new BufferedWriter(osw);
+		
+		FileWriter fw = new FileWriter("arquivo-teste2.txt");	
+		fw.write("Testando escrita no java.io");
+		fw.write("\n");//caracter especial para pular linha - símbolo de caracter especial(\)
+		fw.write("Testando escrita no java.io linha 2");
+				
+		fw.close();
+	}
+
+}
